@@ -43,7 +43,7 @@ module "azurerm_linux_virtual_machine" {
   source = "../modules/azure_virtual_linux_machine"
 
   for_each = var.azure_virtual_machine
-
+ subnet_id = each.value.subnet_id
   nic_name = each.value.nic_name
   location = each.value.location
   rg_name = each.value.rg_name

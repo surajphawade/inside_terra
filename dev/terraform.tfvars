@@ -43,6 +43,7 @@ azure_virtual_machine = {
         vm_name = "3tire-vm"
         uname = "Adminsp"
         pass = "Adminsp@1227#"
-        
+        subnet_id = "/subscriptions/2e333137-3307-4678-a744-a2d37508c632/resourceGroups/3tire-rg/providers/Microsoft.Network/virtualNetworks/3-tire-vnet/subnets/3-tire-snet"
+
     }
 }
