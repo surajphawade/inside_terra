@@ -20,3 +20,7 @@ variable "pass" {
 variable "nic_name" {
   type = string
 }
+
+variable "subnet_id" {
+  type = any
+}

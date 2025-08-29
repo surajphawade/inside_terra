@@ -7,7 +7,7 @@ resource "azurerm_network_interface" "nic" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = module.azurerm_subnet["snet1"].azurerm_subnet.snet.id
+    subnet_id                     = var.subnet_id
     private_ip_address_allocation = "Dynamic"
   }
 }
@@ -20,9 +20,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   admin_username      = var.uname
   admin_password      = var.pass
   disable_password_authentication = false
-  network_interface_ids = [
-    azurerm_network_interface.nic.id,
-  ]
+  network_interface_ids = [azurerm_network_interface.nic.id,]
 
   os_disk {
     caching              = "ReadWrite"
@@ -32,7 +30,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
-    sku       = "22_04-lts"
+    sku       = "22.04 LTS"
     version   = "latest"
   }
 }
