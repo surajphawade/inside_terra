@@ -1,10 +1,41 @@
-name: mera pehala run
+name: terraform_provisoning
 
 on:
-  push:
-      branches:
-        - main
+  workflow_dispatch:
+
 jobs:
-  terraform-job: 
+  my_job:
+    name: terraform-setup
     runs-on: self-hosted
 
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Azure Login
+      uses: Azure/login@v2.3.0
+        with:
+          creds: # optional
+        # ClientId of the Azure Service principal created.
+          client-id: # optional
+        # TenantId of the Azure Service principal created.
+          tenant-id: # optional
+        # Azure subscriptionId
+          subscription-id: # optional
+        
+    - uses: hashicorp/setup-terraform@v3
+
+    - name: Terraform fmt
+      id: fmt
+      run: terraform fmt -check
+      continue-on-error: true
+    
+    - name: Terraform Init
+      id: init
+      run: terraform init -input=false
+      
+    - name: Terraform Plan
+      id: plan
+      run: terraform plan -no-color -input=false
+      continue-on-error: true
+              
+        
