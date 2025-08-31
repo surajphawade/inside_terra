@@ -2,12 +2,14 @@ name: terraform_provisoning
 
 on:
   workflow_dispatch:
-
+permissions:
+  id-token: write
+  contents: read
+  
 jobs:
   my_job:
     name: terraform-setup
     runs-on: self-hosted
-    permissions: write-all
 
     steps:
     - uses: actions/checkout@v4
