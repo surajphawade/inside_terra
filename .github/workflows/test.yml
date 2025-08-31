@@ -13,14 +13,10 @@ jobs:
 
     - name: Azure Login
       uses: Azure/login@v2.3.0
-        with:
-          creds: # optional
-        # ClientId of the Azure Service principal created.
-          client-id: # optional
-        # TenantId of the Azure Service principal created.
-          tenant-id: # optional
-        # Azure subscriptionId
-          subscription-id: # optional
+      with:
+        client-id: 05bdd633-73fb-4a76-9554-c013f3c6d142
+        tenant-id: 768c2942-6ded-4274-a906-05c932e5a3d8
+        subscription-id: 2e333137-3307-4678-a744-a2d37508c632
         
     - uses: hashicorp/setup-terraform@v3
 
