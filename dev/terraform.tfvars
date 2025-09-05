@@ -19,14 +19,14 @@ storage_account = {
 }
 azure_subnet = {
     snet1 = {
-        snet_name = "3-tire-snet"
+        snet_name = "3-tire-frontend"
         rg_name = "3tire-rg"
         vnet_name = "3-tire-vnet"
         location = "EastUs"
         address_prefixes = ["10.0.1.0/24"]
   }
   snet2 = {
-        snet_name = "3-tire-snet"
+        snet_name = "3-tire-Backend"
         rg_name = "3tire-rg"
         vnet_name = "3-tire-vnet"
         location = "EastUs"
@@ -37,13 +37,23 @@ azure_subnet = {
 azure_virtual_machine = {
 
     vm1= {
-        nic_name = "3tire-nic"
+        nic_name = "3tire-f-nic"
         location = "EastUs"
         rg_name = "3tire-rg"
-        vm_name = "3tire-vm"
+        vm_name = "3tire-frontend"
         uname = "Adminsp"
         pass = "Adminsp@1227#"
-        subnet_id = "/subscriptions/2e333137-3307-4678-a744-a2d37508c632/resourceGroups/3tire-rg/providers/Microsoft.Network/virtualNetworks/3-tire-vnet/subnets/3-tire-snet"
+        subnet_id = "/subscriptions/2e333137-3307-4678-a744-a2d37508c632/resourceGroups/3tire-rg/providers/Microsoft.Network/virtualNetworks/3-tire-vnet/subnets/3-tire-frontend"
+
+    }
+    vm2= {
+        nic_name = "3tire-b-nic"
+        location = "EastUs"
+        rg_name = "3tire-rg"
+        vm_name = "3tire-backend"
+        uname = "Adminsp"
+        pass = "Adminsp@1227#"
+        subnet_id = "/subscriptions/2e333137-3307-4678-a744-a2d37508c632/resourceGroups/3tire-rg/providers/Microsoft.Network/virtualNetworks/3-tire-vnet/subnets/3-tire-Backend"
 
     }
 }

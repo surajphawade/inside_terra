@@ -5,13 +5,13 @@ terraform {
         version = "2.90.0"
     }
   }
-  # backend "azurerm" {
-  #   resource_group_name = "3-tire-rg"                                  
-  #   tenant_id            = "768c2942-6ded-4274-a906-05c932e5a3d8"  
-  #   storage_account_name = "3tirestg"                              
-  #   container_name       = "tfstate"                               
-  #   key                  = "dev.terraform.tfstate"                
-  # }
+  backend "azurerm" {
+    resource_group_name = "3tire-rg"                                  
+    tenant_id            = "768c2942-6ded-4274-a906-05c932e5a3d8"  
+    storage_account_name = "3tirestg"                              
+    container_name       = "tfstate"                               
+    key                  = "dev.terraform.tfstate"                
+  }
 }
 provider "azurerm" {
     features { }

@@ -16,7 +16,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   name                = var.vm_name
   resource_group_name = var.rg_name
   location            = var.location
-  size                = "Standard_F2"
+  size                = "Standard_B1s"
   admin_username      = var.uname
   admin_password      = var.pass
   disable_password_authentication = false
@@ -29,8 +29,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "22.04 LTS"
+    offer     = "0001-com-ubuntu-server-focal"
+    sku       = "20_04-lts"
     version   = "latest"
   }
 }
