@@ -43,8 +43,10 @@ azure_virtual_machine = {
         vm_name = "3tire-frontend"
         uname = "Adminsp"
         pass = "Adminsp@1227#"
-        subnet_id = "/subscriptions/2e333137-3307-4678-a744-a2d37508c632/resourceGroups/3tire-rg/providers/Microsoft.Network/virtualNetworks/3-tire-vnet/subnets/3-tire-frontend"
-
+        # subnet_id = "/subscriptions/2e333137-3307-4678-a744-a2d37508c632/resourceGroups/3tire-rg/providers/Microsoft.Network/virtualNetworks/3-tire-vnet/subnets/3-tire-frontend"
+        name = "3-tire-frontend"
+        vnet_name = "3-tire-vnet"
+        pip_name = "3tire-pip-frontend"
     }
     vm2= {
         nic_name = "3tire-b-nic"
@@ -53,7 +55,22 @@ azure_virtual_machine = {
         vm_name = "3tire-backend"
         uname = "Adminsp"
         pass = "Adminsp@1227#"
-        subnet_id = "/subscriptions/2e333137-3307-4678-a744-a2d37508c632/resourceGroups/3tire-rg/providers/Microsoft.Network/virtualNetworks/3-tire-vnet/subnets/3-tire-Backend"
+        # subnet_id = "/subscriptions/2e333137-3307-4678-a744-a2d37508c632/resourceGroups/3tire-rg/providers/Microsoft.Network/virtualNetworks/3-tire-vnet/subnets/3-tire-Backend"
+        name = "3-tire-Backend"
+        vnet_name = "3-tire-vnet"
+        pip_name = "3tire-pip-backend"
+    }
+}
 
+azure_public_ip = {
+    pip1 = {
+        pip_name = "3tire-pip-frontend"
+        rg_name = "3tire-rg"
+        rg_location = "EastUs"
+    }
+     pip2 = {
+        pip_name = "3tire-pip-backend"
+        rg_name = "3tire-rg"
+        rg_location = "EastUs"
     }
 }

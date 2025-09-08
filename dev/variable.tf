@@ -17,3 +17,8 @@ variable "azure_subnet" {
 variable "azure_virtual_machine" {
   type = map(any)
 }
+
+variable "azure_public_ip" {
+  type = map(any)
+  
+}

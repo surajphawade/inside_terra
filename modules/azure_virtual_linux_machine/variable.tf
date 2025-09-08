@@ -21,6 +21,16 @@ variable "nic_name" {
   type = string
 }
 
-variable "subnet_id" {
-  type = any
+variable "name" {
+  type = string
+  
+}
+
+variable "vnet_name" {
+  type = string
+  
+}
+
+variable "pip_name" {
+  type = string
 }
