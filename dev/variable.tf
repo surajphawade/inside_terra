@@ -22,3 +22,8 @@ variable "azure_public_ip" {
   type = map(any)
   
 }
+
+variable "azure_key_vault" {
+  type = map(any)
+  
+}

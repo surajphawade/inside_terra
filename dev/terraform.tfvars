@@ -1,5 +1,8 @@
 resource_group = {
-    "3tire-rg" = "EastUS"
+    rg1 = {
+        name = "3tire-rg"
+        location = "EastUs"
+    }
 }
 
 virtual_network = {
@@ -72,5 +75,14 @@ azure_public_ip = {
         pip_name = "3tire-pip-backend"
         rg_name = "3tire-rg"
         rg_location = "EastUs"
+    }
+}
+
+azure_key_vault = {
+    akv = {
+        kv_name = "tire-akv"
+        rg_name = "3tire-rg"
+        location = "EastUs"
+        
     }
 }

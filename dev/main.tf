@@ -1,8 +1,8 @@
 module "azurerm_resource_group" {
     source = "../modules/azure_resource_group"
     for_each = var.resource_group
-      rg_name = each.key
-      rg_location = each.value
+      rg_name = each.value.name
+      rg_location = each.value.location
   
 }
 
@@ -64,4 +64,16 @@ depends_on = [ module.azurerm_resource_group ]
  rg_name = each.value.rg_name
  rg_location = each.value.rg_location
 
+}
+
+module "azurerm_key_vault" {
+  depends_on = [ module.azurerm_resource_group ]
+  source = "../modules/azure_key_vault"
+  for_each = var.azure_key_vault
+
+  kv_name = each.value.kv_name
+  rg_name = each.value.rg_name
+  location = each.value.location
+
+  
 }
