@@ -90,13 +90,13 @@ azure_key_vault = {
 
 azure_key_vault_secrets = {
     secrets1 = {
-        secret_name = "front_vm_admin_name"
+        secret_name = "front-vm-admin-name"
         secret_value = "Adminsp"
         key_vault_name = "tire-akv"
         rg_name = "EastUs"
     }
     secrets2 = {
-        secret_name = "front_vm_admin_pass"
+        secret_name = "front-vm-admin-pass"
         secret_value = "Adminsp@1227#"
         key_vault_name = "tire-akv"
         rg_name = "EastUs"
@@ -110,5 +110,14 @@ azure_mysql_server = {
         location ="EastUs"
         administrator_login = "Adminsp"
         administrator_login_password = "Admin@1227#"
+    }
+}
+
+azure_mysql_database = {
+    sqldb1 = {
+        msdb_name = "3tire-sqldb"
+        collation = "SQL_Latin1_General_CP1_CI_AS"
+        sqlserver_name = "3tire-az-server"
+        rg_name = "EastUs"
     }
 }

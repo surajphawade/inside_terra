@@ -87,7 +87,7 @@ module "azurerm_key_vault_secret" {
   secret_value = each.value.secret_value
   key_vault_name = each.value.key_vault_name
   rg_name = each.value.rg_name
-  
+
 }
 
 module "azurerm_mysql_server" {
@@ -100,5 +100,18 @@ module "azurerm_mysql_server" {
   sqlserver_name = each.value.sqlserver_name
   administrator_login = each.value.administrator_login
   administrator_login_password = each.value.administrator_login_password
+  
+}
+
+module "azurerm_mssql_database" {
+  depends_on = [ module.azurerm_mysql_server ]
+  source = "../modules/azure_mysql_database"
+
+  for_each = azure_mysql_database
+
+  msdb_name = each.value.msdb_name
+  collation = each.value.collation
+  sqlserver_name = each.value.sqlserver_name
+  rg_name = each.value.rg_name
   
 }
