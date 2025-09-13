@@ -27,7 +27,7 @@ module "azurerm_storage_account" {
 }
 
 module "azurerm_subnet" {
-    depends_on = [ module.azurerm_resource_group, module.azurerm_vitual_network ]
+    depends_on = [ module.azurerm_vitual_network ]
    # count = length(var.address_prefixes)
     source = "../modules/azure_subnet"
     for_each = var.azure_subnet
@@ -39,7 +39,7 @@ module "azurerm_subnet" {
 }
 
 module "azurerm_linux_virtual_machine" {
-    depends_on = [ module.azurerm_resource_group, module.azurerm_vitual_network, module.azurerm_subnet,module.azurerm_public_ip ]
+    depends_on = [ module.azurerm_subnet ]
   source = "../modules/azure_virtual_linux_machine"
 
   for_each = var.azure_virtual_machine
