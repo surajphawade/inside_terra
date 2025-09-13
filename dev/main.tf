@@ -107,7 +107,7 @@ module "azurerm_mssql_database" {
   depends_on = [ module.azurerm_mysql_server ]
   source = "../modules/azure_mysql_database"
 
-  for_each = azure_mysql_database
+  for_each = var.azure_mysql_database
 
   msdb_name = each.value.msdb_name
   collation = each.value.collation

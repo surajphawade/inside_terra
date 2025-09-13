@@ -1,6 +1,6 @@
 resource "azurerm_mssql_database" "msdb" {
   name         = var.msdb_name
-  server_id    = azurerm_mysql_server.sqlserver.id
+  server_id    = data.azurerm_mysql_server.sqlserver.id
   collation    = var.collation
   #license_type = "LicenseIncluded" 
 }
