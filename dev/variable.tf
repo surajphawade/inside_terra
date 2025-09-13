@@ -32,3 +32,8 @@ variable "azure_key_vault_secrets" {
   type = map(any)
   
 }
+
+variable "azure_mysql_server" {
+  type = map(any)
+  
+}

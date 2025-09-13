@@ -101,3 +101,13 @@ azure_key_vault_secrets = {
         rg_name = "EastUs"
     }
 }
+
+azure_mysql_server = {
+    sqlserver1 = {
+        sqlserver_name = "3tire-az-server"
+        rg_name = "3tire-rg"
+        location ="EastUs"
+        administrator_login = "Adminsp"
+        administrator_login_password = "Admin@1227#"
+    }
+}
