@@ -27,3 +27,8 @@ variable "azure_key_vault" {
   type = map(any)
   
 }
+
+variable "azure_key_vault_secrets" {
+  type = map(any)
+  
+}

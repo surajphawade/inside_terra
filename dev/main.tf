@@ -74,6 +74,16 @@ module "azurerm_key_vault" {
   kv_name = each.value.kv_name
   rg_name = each.value.rg_name
   location = each.value.location
+}
 
-  
+module "azurerm_key_vault_secret" {
+  source = "../modules/azure_key_vault_secrets"
+  depends_on = [ module.azurerm_key_vault ]
+
+  for_each = var.azure_key_vault_secrets
+
+  secret_name = each.value.secret_name
+  secret_value = each.value.secret_value
+  data_secret_name = each.value.data_secret_name
+  rg_name = each.value.rg_name
 }

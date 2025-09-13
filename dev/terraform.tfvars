@@ -86,3 +86,18 @@ azure_key_vault = {
         
     }
 }
+
+azure_key_vault_secrets = {
+    secrets1 = {
+        secret_name = "front_vm_admin_name"
+        secret_value = "Adminsp"
+        data_secret_name = "tire-akv"
+        rg_name = "EastUs"
+    }
+    secrets2 = {
+        secret_name = "front_vm_admin_pass"
+        secret_value = "Adminsp@1227#"
+        data_secret_name = "tire-akv"
+        rg_name = "EastUs"
+    }
+}
