@@ -1,5 +1,10 @@
 resource "azurerm_key_vault_secret" "secret" {
   name         = var.secret_name
   value        = var.secret_value
-  key_vault_id = var.key_vault_id
+  key_vault_id = data.azurerm_key_vault.key_vault.id
+}
+
+data "azurerm_key_vault" "key_vault" {
+  name                = var.key_vault_name
+  resource_group_name = var.rg_name
 }

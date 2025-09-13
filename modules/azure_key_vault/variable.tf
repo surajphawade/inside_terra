@@ -13,3 +13,4 @@ variable "location" {
   type = string
 }
 
+

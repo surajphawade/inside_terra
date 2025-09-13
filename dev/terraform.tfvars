@@ -92,12 +92,14 @@ azure_key_vault_secrets = {
     secrets1 = {
         secret_name = "front_vm_admin_name"
         secret_value = "Adminsp"
-        key_vault_id = ""
+        key_vault_name = "tire-akv"
+        rg_name = "EastUs"
     }
     secrets2 = {
         secret_name = "front_vm_admin_pass"
         secret_value = "Adminsp@1227#"
-        key_vault_id = ""
+        key_vault_name = "tire-akv"
+        rg_name = "EastUs"
     }
 }
 

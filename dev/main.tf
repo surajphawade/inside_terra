@@ -85,7 +85,9 @@ module "azurerm_key_vault_secret" {
 
   secret_name = each.value.secret_name
   secret_value = each.value.secret_value
-  key_vault_id = each.value.key_vault_id
+  key_vault_name = each.value.key_vault_name
+  rg_name = each.value.rg_name
+  
 }
 
 module "azurerm_mysql_server" {
