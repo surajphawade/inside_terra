@@ -83,6 +83,7 @@ azure_key_vault = {
         kv_name = "tire-akv"
         rg_name = "3tire-rg"
         location = "EastUs"
+        tenant_id = "fbf3517a-6193-4d03-9580-ce8a94c1e28c"
         
     }
 }
@@ -91,14 +92,12 @@ azure_key_vault_secrets = {
     secrets1 = {
         secret_name = "front_vm_admin_name"
         secret_value = "Adminsp"
-        data_secret_name = "tire-akv"
-        rg_name = "EastUs"
+        key_vault_id = ""
     }
     secrets2 = {
         secret_name = "front_vm_admin_pass"
         secret_value = "Adminsp@1227#"
-        data_secret_name = "tire-akv"
-        rg_name = "EastUs"
+        key_vault_id = ""
     }
 }
 

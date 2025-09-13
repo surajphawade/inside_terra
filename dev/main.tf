@@ -74,6 +74,7 @@ module "azurerm_key_vault" {
   kv_name = each.value.kv_name
   rg_name = each.value.rg_name
   location = each.value.location
+  tenant_id = each.value.tenant_id
 }
 
 module "azurerm_key_vault_secret" {
@@ -84,8 +85,7 @@ module "azurerm_key_vault_secret" {
 
   secret_name = each.value.secret_name
   secret_value = each.value.secret_value
-  data_secret_name = each.value.data_secret_name
-  rg_name = each.value.rg_name
+  key_vault_id = each.value.key_vault_id
 }
 
 module "azurerm_mysql_server" {
