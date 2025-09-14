@@ -39,7 +39,7 @@ module "azurerm_subnet" {
 }
 
 module "azurerm_linux_virtual_machine" {
-    depends_on = [ module.azurerm_subnet ]
+    depends_on = [ module.azurerm_subnet,module.azurerm_key_vault ]
   source = "../modules/azure_virtual_linux_machine"
 
   for_each = var.azure_virtual_machine
