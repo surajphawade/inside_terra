@@ -39,7 +39,7 @@ module "azurerm_subnet" {
 }
 
 module "azurerm_linux_virtual_machine" {
-    depends_on = [ module.azurerm_subnet,module.azurerm_key_vault ]
+    depends_on = [ module.azurerm_subnet ]
   source = "../modules/azure_virtual_linux_machine"
 
   for_each = var.azure_virtual_machine
@@ -48,7 +48,7 @@ module "azurerm_linux_virtual_machine" {
   location = each.value.location
   rg_name = each.value.rg_name
   vm_name = each.value.vm_name
-  admin_name = each.value.admin_name
+  admin_username = each.value.admin_username
   admin_password = each.value.admin_password
   name = each.value.name
   vnet_name = each.value.vnet_name
@@ -66,29 +66,30 @@ depends_on = [ module.azurerm_resource_group ]
 
 }
 
-module "azurerm_key_vault" {
-  depends_on = [ module.azurerm_resource_group ]
-  source = "../modules/azure_key_vault"
-  for_each = var.azure_key_vault
+# module "azurerm_key_vault" {
+#   depends_on = [ module.azurerm_resource_group ]
+#   source = "../modules/azure_key_vault"
+#   for_each = var.azure_key_vault
 
-  kv_name = each.value.kv_name
-  rg_name = each.value.rg_name
-  location = each.value.location
+#   kv_name = each.value.kv_name
+#   rg_name = each.value.rg_name
+#   location = each.value.location
   
-}
+# }
 
-module "azurerm_key_vault_secret" {
-  source = "../modules/azure_key_vault_secrets"
-  depends_on = [ module.azurerm_key_vault ]
+# module "azurerm_key_vault_secret" {
+#   source = "../modules/azure_key_vault_secrets"
+#   depends_on = [ module.azurerm_key_vault ]
 
-  for_each = var.azure_key_vault_secrets
+#   for_each = var.azure_key_vault_secrets
 
-  secret_name = each.value.secret_name
-  secret_value = each.value.secret_value
-  key_vault_name = each.value.key_vault_name
-  rg_name = each.value.rg_name
+#   secret_name = each.value.secret_name
+#   secret_value = each.value.secret_value
+#   key_vault_name = each.value.key_vault_name
+#   rg_name = each.value.rg_name
+#   key_vault_id  = module.azurerm_key_vault.id
 
-}
+# }
 
 module "azurerm_mysql_server" {
   depends_on = [ module.azurerm_resource_group ]

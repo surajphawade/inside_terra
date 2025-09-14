@@ -19,8 +19,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
   resource_group_name = var.rg_name
   location            = var.location
   size                = "Standard_B1s"
-  admin_username      = data.azurerm_key_vault_secret.admin_name.value
-  admin_password      = data.azurerm_key_vault_secret.admin_password.value
+  admin_username      = var.admin_username #data.azurerm_key_vault_secret.admin_name.value
+  admin_password      = var.admin_password #data.azurerm_key_vault_secret.admin_password.value
   disable_password_authentication = false
   network_interface_ids = [azurerm_network_interface.nic.id,]
 
@@ -35,4 +35,13 @@ resource "azurerm_linux_virtual_machine" "vm" {
     sku       = "20_04-lts"
     version   = "latest"
   }
+custom_data = base64encode(<<-EOF
+              #!/bin/bash
+              apt-get update -y
+              apt-get install -y nginx
+              systemctl enable nginx
+              systemctl start nginx
+              echo "Hello from Terraform Nginx VM" > /var/www/html/index.html
+          EOF
+  )
 }

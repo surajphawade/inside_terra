@@ -7,18 +7,20 @@ resource "azurerm_key_vault" "akv" {
   sku_name            = "standard"
 access_policy {
     tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = data.azurerm_client_config.current.object_id
-
+    object_id = "c29dd0e6-c9c5-42d2-8f1d-7b0a028178aa"
     key_permissions = [
-      "Get",
+      "Get","list"
     ]
 
     secret_permissions = [
-      "Get",
+      "Get","list","set"
     ]
 
     storage_permissions = [
       "Get",
     ]
   }
+}
+output "id" {
+  value = azurerm_key_vault.akv.id
 }

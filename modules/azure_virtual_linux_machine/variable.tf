@@ -8,7 +8,7 @@ variable "location" {
   type = string
 }
 
-variable "admin_name" {
+variable "admin_username" {
   type = string
 }
 
