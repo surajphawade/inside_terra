@@ -44,8 +44,8 @@ azure_virtual_machine = {
         location = "EastUs"
         rg_name = "3tire-rg"
         vm_name = "3tire-frontend"
-        uname = "Adminsp"
-        pass = "Adminsp@1227#"
+        admin_name = "front-vm-admin-name"
+        admin_password = "front-vm-admin-pass"
         # subnet_id = "/subscriptions/2e333137-3307-4678-a744-a2d37508c632/resourceGroups/3tire-rg/providers/Microsoft.Network/virtualNetworks/3-tire-vnet/subnets/3-tire-frontend"
         name = "3-tire-frontend"
         vnet_name = "3-tire-vnet"
@@ -56,12 +56,12 @@ azure_virtual_machine = {
         location = "EastUs"
         rg_name = "3tire-rg"
         vm_name = "3tire-backend"
-        uname = "Adminsp"
-        pass = "Adminsp@1227#"
-        # subnet_id = "/subscriptions/2e333137-3307-4678-a744-a2d37508c632/resourceGroups/3tire-rg/providers/Microsoft.Network/virtualNetworks/3-tire-vnet/subnets/3-tire-Backend"
-        name = "3-tire-Backend"
+        admin_name = "back-vm-admin-name"
+        admin_password = "back-vm-admin-pass"
+         name = "3-tire-Backend"
         vnet_name = "3-tire-vnet"
         pip_name = "3tire-pip-backend"
+        kv_name = "tire-akv"
     }
 }
 
@@ -83,8 +83,7 @@ azure_key_vault = {
         kv_name = "tire-akv"
         rg_name = "3tire-rg"
         location = "EastUs"
-        tenant_id = "fbf3517a-6193-4d03-9580-ce8a94c1e28c"
-        
+     
     }
 }
 
@@ -97,6 +96,18 @@ azure_key_vault_secrets = {
     }
     secrets2 = {
         secret_name = "front-vm-admin-pass"
+        secret_value = "Adminsp@1227#"
+        key_vault_name = "tire-akv"
+        rg_name = "EastUs"
+    }
+    secrets3 = {
+        secret_name = "back-vm-admin-name"
+        secret_value = "Adminsp"
+        key_vault_name = "tire-akv"
+        rg_name = "EastUs"
+    }
+    secrets4 = {
+        secret_name = "back-vm-admin-pass"
         secret_value = "Adminsp@1227#"
         key_vault_name = "tire-akv"
         rg_name = "EastUs"

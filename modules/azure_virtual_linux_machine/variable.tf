@@ -8,11 +8,11 @@ variable "location" {
   type = string
 }
 
-variable "uname" {
+variable "admin_name" {
   type = any
 }
 
-variable "pass" {
+variable "admin_password" {
     type = any
   
 }
@@ -32,5 +32,9 @@ variable "vnet_name" {
 }
 
 variable "pip_name" {
+  type = string
+}
+
+variable "kv_name" {
   type = string
 }

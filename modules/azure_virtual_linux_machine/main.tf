@@ -19,8 +19,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
   resource_group_name = var.rg_name
   location            = var.location
   size                = "Standard_B1s"
-  admin_username      = var.uname
-  admin_password      = var.pass
+  admin_username      = data.azurerm_key_vault_secret.admin_name
+  admin_password      = data.azurerm_key_vault_secret.admin_password
   disable_password_authentication = false
   network_interface_ids = [azurerm_network_interface.nic.id,]
 

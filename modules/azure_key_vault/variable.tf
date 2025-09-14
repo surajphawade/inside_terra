@@ -1,12 +1,8 @@
-variable "kv_name" {
-  type = string
-}
-
 variable "rg_name" {
   type = string
 }
 
-variable "tenant_id" {
+variable "kv_name" {
   type = string
 }
 variable "location" {

@@ -48,12 +48,12 @@ module "azurerm_linux_virtual_machine" {
   location = each.value.location
   rg_name = each.value.rg_name
   vm_name = each.value.vm_name
-  uname = each.value.uname
-  pass = each.value.pass
+  admin_name = each.value.admin_name
+  admin_password = each.value.admin_password
   name = each.value.name
   vnet_name = each.value.vnet_name
   pip_name = each.value.pip_name
-
+  kv_name = each.value.kv_name
 }
 
 module "azurerm_public_ip" {
@@ -74,7 +74,7 @@ module "azurerm_key_vault" {
   kv_name = each.value.kv_name
   rg_name = each.value.rg_name
   location = each.value.location
-  tenant_id = each.value.tenant_id
+  
 }
 
 module "azurerm_key_vault_secret" {
