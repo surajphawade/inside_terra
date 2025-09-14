@@ -9,11 +9,11 @@ variable "location" {
 }
 
 variable "admin_name" {
-  type = any
+  type = string
 }
 
 variable "admin_password" {
-    type = any
+    type = string
   
 }
 

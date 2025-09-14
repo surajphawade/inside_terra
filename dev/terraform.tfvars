@@ -50,6 +50,7 @@ azure_virtual_machine = {
         name = "3-tire-frontend"
         vnet_name = "3-tire-vnet"
         pip_name = "3tire-pip-frontend"
+        kv_name = "tire-akv"
     }
     vm2= {
         nic_name = "3tire-b-nic"
