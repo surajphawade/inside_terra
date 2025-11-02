@@ -18,6 +18,3 @@ provider "azurerm" {
     subscription_id = "245413b2-ec2b-4a15-93d2-2f165a2c170"
   
 }
-abcd krunt bghu
-mg ky krnar
-br br bghu
