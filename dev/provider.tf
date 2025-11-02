@@ -20,5 +20,5 @@ provider "azurerm" {
 }
 abcd krunt bghu
 
-
+achha achha 
 br br bghu
