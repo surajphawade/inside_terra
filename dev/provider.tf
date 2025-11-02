@@ -18,3 +18,5 @@ provider "azurerm" {
     subscription_id = "245413b2-ec2b-4a15-93d2-2f165a2c170"
   
 }
+
+Mala git command chi practice karaychi ahe
